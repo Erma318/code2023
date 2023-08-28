@@ -1,9 +1,15 @@
 package Heap;
 
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 public class KthClosestPointToZero {
-	    public List<Integer> closest(int[] a, int[] b, int[] c, int k) {
+	  public List<Integer> closest(int[] a, int[] b, int[] c, int k) {
 	      PriorityQueue<List<Integer>> minHeap = new PriorityQueue<>(2 * k, new Comparator<List<Integer>>() {
 		      @Override
 		      public int compare(List<Integer> o1, List<Integer> o2) {
@@ -43,8 +49,8 @@ public class KthClosestPointToZero {
 		private long distance(List<Integer> point, int[] a, int[] b, int[] c) {
 		  	long dis = 0;
 		  	dis += a[point.get(0)] * a[point.get(0)];
-			dis += a[point.get(1)] * a[point.get(1)];
-			dis += a[point.get(2)] * a[point.get(2)];
+			dis += b[point.get(1)] * b[point.get(1)];
+			dis += b[point.get(2)] * b[point.get(2)];
 			return dis;
 	    }
 }
